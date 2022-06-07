@@ -17,6 +17,7 @@ class ExpenseBloc extends Bloc<ExpenseEvent, ExpenseState> {
 
     on<AddUserEvent>(
       (event, emit) {
+        
         LoadUsersState loadUsersState =
             LoadUsersState(userList: event.getTotalUsers());
         emit(loadUsersState);

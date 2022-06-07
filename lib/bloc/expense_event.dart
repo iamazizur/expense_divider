@@ -31,3 +31,16 @@ class AddUserEvent extends ExpenseEvent {
     return usersList;
   }
 }
+
+class GetTotalAmount {
+  final List<User> totalUsers;
+  GetTotalAmount({required this.totalUsers});
+
+  String getTotalAmount() {
+    int total = 0;
+    for (User element in totalUsers) {
+      total += element.totalAmount;
+    }
+    return total.toString();
+  }
+}

@@ -1,7 +1,7 @@
 class User {
   final String name;
   final int id;
-  int? totalAmount;
+  int totalAmount;
   bool isLeading;
   int currAmount;
   String? imageURL;
@@ -12,5 +12,6 @@ class User {
     this.currAmount = 0,
     this.isLeading = true,
     this.imageURL,
+    this.totalAmount = 0,
   });
 }

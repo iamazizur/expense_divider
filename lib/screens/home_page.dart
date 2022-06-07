@@ -9,9 +9,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    // TotalUsers totalUsers = TotalUsers();
+    GetTotalAmount getTotalAmount = GetTotalAmount(totalUsers: users);
+    users.forEach(
+      (element) => print(element.totalAmount),
+    );
     return Scaffold(
       appBar: AppBar(
         title: const Text('Expense Divider'),
@@ -21,6 +25,38 @@ class HomePage extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'Total Expense:',
+                          style: CustomTextStyles.titleStyle,
+                        ),
+                        Text(
+                          getTotalAmount.getTotalAmount(),
+                          style: CustomTextStyles.titleStyle,
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    Column(
+                      children: [
+                        Text(
+                          'Expense per head:',
+                          style: CustomTextStyles.titleStyle,
+                        ),
+                        Text(
+                          'Expense per head:',
+                          style: CustomTextStyles.titleStyle,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
               HeadingButton(
                 onpressed: () {
                   final User user = User(
